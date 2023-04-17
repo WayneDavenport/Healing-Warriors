@@ -1,0 +1,327 @@
+@font-face {
+    font-family: lobster;
+    src: url(Lobster-Regular.ttf);
+}
+
+body {
+  /*background-image: url("sitmed.png");
+  background-repeat: no-repeat;
+  background-size: 98%;
+  background-attachment: fixed;
+  height: 500px;
+  background-position: center -340px;*/
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: bold;
+  overflow: hidden;
+  perspective: 10px;
+}
+
+a {
+  text-decoration-line: none;
+  text-decoration-color: none;
+  color: black;
+    }
+  span {
+  	z-index: 3;
+  }
+
+.emblem {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 160px;
+	width: 160px;
+	border-radius: 50%;
+	background-color: white;
+	margin-right: 10px;
+	z-index: 4;
+	position: fixed;
+	transform: translateX(10rem) translateY(-1rem);
+	font-family: lobster;
+	font-size: 32px;
+	background: linear-gradient(323deg, rgba(253,187,45,1) 0%, rgba(195,34,107,0.3477766106442577) 100%);
+} 
+
+.navbar {
+	background: radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(253,187,45,0.30575980392156865) 100%);
+	position: fixed;
+	top: 0;
+	width: 100%;
+	left: 0;
+	text-align: center;
+	gap: 1rem;
+	backdrop-filter: blur(4px);
+	z-index: 2;
+}
+
+.nav-item {
+  position: relative;
+  display: inline-block;
+  padding: 2rem;
+  background-color: rgba(221, 221, 221, 0);
+  text-decoration: none;
+  margin-right: 2rem;  
+  text-align: center;
+  transition: background-color 0.6s ease-in-out;
+ }
+ .nav-item:hover {
+  z-index: 1;
+  background-color: rgba(221, 221, 221, 0.5);
+  color: whitesmoke;
+  text-decoration-color: whitesmoke;
+}
+.nav-item:hover a   {
+	color: whitesmoke;
+} 
+
+.menu {
+  position: relative;
+  display: none;
+  padding: 2rem;
+  background-color: rgba(221, 221, 221, 0);
+  text-decoration: none;
+  margin-right: 2rem;  
+  text-align: center;
+  transition: background-color 0.6s ease-in-out;
+ }
+ .menu:hover {
+  z-index: 1;
+  background-color: rgba(221, 221, 221, 0.5);
+  color: whitesmoke;
+  text-decoration-color: whitesmoke;
+}
+.menu:hover a   {
+	color: whitesmoke;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  padding: 2rem;
+  background-color: rgba(221, 221, 221, 0);
+  text-decoration: none;
+  margin-right: 2rem;  
+  justify-content: center;
+  z-index: 2;
+ }
+
+.dropdown-content {
+  width: 6rem;
+  display: none;
+  position: absolute;
+  text-decoration: none;
+  z-index: 2;
+  
+  color: whitesmoke;
+  padding-left: 2rem;
+  padding-top: 3rem;
+  left: 0;
+  right: 0;
+  top: 0;
+  text-align: left;
+  clip-path: polygon(0 0, 100% 0, 100% 21%, 0 21%);
+  transition: background-color 1s ease-in-out;
+  transition: all 1.2s ease;
+ }
+
+
+.dropdown:hover .dropdown-content {
+  display: grid;
+  grid-template-rows: 1fr;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  animation: appear 1100ms forwards;
+  background-color: rgba(221, 221, 221, 0.7);
+}
+
+.dropdown-content a:hover {
+	color: whitesmoke;
+	
+}
+
+.dropdown:hover {
+  z-index: 2;
+  background-color: rgba(221, 221, 221, 0);
+
+  color: whitesmoke;    
+}
+
+
+.wrap {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 10px;
+}
+
+header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  transform-style: preserve-3d;
+  z-index: -1;
+} 
+
+.back-ground {
+  transform: translateZ(-10px) scale(3) translateY(34rem);
+
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  transform: translateY(-35rem);
+}
+
+.container > * {
+  flex-basis: calc(50% - 10px);
+  margin: 5px;
+  background: linear-gradient(323deg, rgba(253, 187, 45, 1) 0%, rgba(195, 34, 107, 0.3477766106442577) 100%);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.left-column {
+  margin-right: auto;
+  margin-bottom: 6rem;
+  color: black;
+  text-shadow: 1px 1px 2px lightblue;
+}
+
+.right-column {
+  margin-left: auto;
+  margin-bottom: 6rem;
+}
+.left-column:first-of-type {
+  height: 200px;
+}
+
+
+h1 {
+    background-image: url("logo1.png"); /*rgba(53,191,201,0.99)*/
+	border-radius: 50%;
+	float: left;
+	text-align: center;
+	transform: translateY(-1rem);
+	shape-outside: circle();
+	margin: 16px;
+	width: 350px;
+	height: 350px;
+	display: block;
+	background-size: cover;
+	justify-content: center;
+    align-items: center;
+    text-overflow: none;
+    color: teal;
+    text-shadow: 1px 1px 2px whitesmoke;
+        }
+
+
+
+
+@keyframes appear {
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+@keyframes glowing-text-shadow-animation {
+    from {
+        text-shadow: none;
+    }
+    to {
+        /*text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #008080, 0 0 70px #008080, 0 0 80px #008080, 0 0 100px #008080;*/
+    }
+  
+}
+@keyframes glow {
+    from {
+        box-shadow: none;
+    }
+    to {
+         box-shadow: 0 0 40px teal;
+    }
+  
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    overflow: hidden;
+  }
+  
+  .nav-item, .dropdown {
+    display: none;
+    margin: 1rem 0;
+    padding: 1rem;
+  }
+
+  .menu {
+  	display: inline-block;
+  	margin-left: 3rem;
+
+  	  }
+  
+  .dropdown-content {
+    position: static;
+    width: 100%;
+    clip-path: none;
+    display: none;
+    margin-top: 1rem;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+    animation: none;
+    background-color: transparent;
+  }
+
+  .left-column:first-of-type {
+  height: auto;
+  flex-basis: calc(100% - 10px);
+}
+  
+  .main {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+    transform: translateY(-20rem);
+  }
+  .main > * {
+  	height: auto;
+  	width: 100%;
+  	margin-bottom: 20%;
+  	transform: translateX(0) translateY(0);
+
+
+  }
+  
+  h1 {
+    margin-right: 1rem; 
+    width: 150px;
+    height: 150px;
+    transform: translateY(0);
+    float: right;
+  }
+  .container { 
+  	transform: translateY(-32rem);
+  }
+  .emblem {
+    transform: translateX(1rem) translateY(-1rem);
+    margin: 0 auto;
+    height: 120px;
+	width: 120px;
+    font-size: 22px;
+  } 
+  
+   
+  .back-ground {
+    transform: translateZ(-10px) scale(2) translateY(35rem);
+  }
+}
