@@ -1,0 +1,457 @@
+@font-face {
+    font-family: lobster;
+    src: url(Lobster-Regular.ttf);
+}
+
+
+
+a {
+  text-decoration-line: none;
+  text-decoration-color: none;
+  color: black;
+    }
+  span {
+    z-index: 3;
+  }
+
+.emblem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 160px;
+  width: 160px;
+  border-radius: 50%;
+  margin-right: 10px;
+  z-index: 4;
+  position: fixed;
+  transform: translateX(10rem) translateY(-13rem);
+  
+  font-family: lobster;
+  font-size: 32px;
+  color: black;
+  background: linear-gradient(323deg, rgba(253,187,45,1) 0%, rgba(195,34,107,0.3477766106442577) 100%);
+  box-shadow: 0 0 50px orangered, 0 0 8px darkred;
+  text-shadow: 1px 2px 40px whitesmoke;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+} 
+#emblemContact{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 160px;
+  width: 160px;
+  border-radius: 50%;
+  margin-right: 10px;
+  z-index: 4;
+  position: fixed;
+  transform: translateX(6rem) translateY(-3.6rem);
+  font-family: lobster;
+  font-size: 32px;
+  color: #000;
+  background: linear-gradient(
+    323deg,
+    #fdbb2d 0,
+    rgba(195, 34, 107, 0.3477766106442577) 100%
+  );
+  box-shadow: 0 0 50px #ff4500, 0 0 8px #8b0000;
+  text-shadow: 1px 2px 40px #f5f5f5;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+.navbar {
+  background: radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(253,187,45,0.30) 100%);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  gap: 1rem;
+  backdrop-filter: blur(4px);
+  z-index: 2;
+}
+
+.nav-item {
+  position: relative;
+  display: inline-block;
+  padding: 2rem;
+  background-color: rgba(221, 221, 221, 0);
+  text-decoration: none;
+  margin-right: 2rem;  
+  text-align: center;
+  transition: background-color 0.6s ease-in-out;
+ }
+ .nav-item:hover {
+  z-index: 1;
+  background-color: rgba(221, 221, 221, 0.9);
+  color: whitesmoke;
+  text-decoration-color: whitesmoke;
+}
+.nav-item:hover a   {
+  color: whitesmoke;
+} 
+
+.menu {
+  position: relative;
+  display: none;
+  padding: 2rem;
+  background-color: rgba(221, 221, 221, 0);
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.6s ease-in-out;
+  margin-left: 2rem;
+  border: none;
+ }
+ .menu:hover {
+  z-index: 1;
+  background-color: rgba(221, 221, 221, 0.5);
+  color: whitesmoke;
+  text-decoration-color: whitesmoke;
+}
+.menu:hover a   {
+  color: whitesmoke;
+}
+.menu:active {
+  transform: translateY(2px);
+}
+
+.hamburger {
+  display: block; 
+  cursor: pointer;
+  padding: 0px;
+  background: blueviolet;
+}
+
+.line {
+  width: 20px;
+  height: 4px;
+  background-color: #000;
+  margin: 3px 0;
+  border-radius: 1rem;
+}
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  padding: 2rem;
+  background-color: rgba(221, 221, 221, 0);
+  text-decoration: none;
+  margin-right: 2rem;  
+  justify-content: center;
+  z-index: 2;
+ }
+
+.dropdown-content {
+  width: 6rem;
+  display: none;
+  position: absolute;
+  text-decoration: none;
+  z-index: -4;
+  
+  color: whitesmoke;
+  padding-left: 2rem;
+  padding-top: 3rem;
+  left: 0;
+  right: 0;
+  top: 0;
+  text-align: left;
+  clip-path: polygon(0 0, 100% 0, 100% 21%, 0 21%);
+  transition: background-color 1s ease-in-out;
+  transition: all 1.2s ease;
+ }
+
+
+.dropdown:hover .dropdown-content {
+  display: grid;
+  grid-template-rows: 1fr;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  animation: appear 1100ms forwards;
+  background-color: rgba(221, 221, 221, 1);
+}
+
+.dropdown-content a:hover {
+  color: whitesmoke;
+  
+}
+
+.dropdown:hover {
+  z-index: 2;
+  background-color: rgba(221, 221, 221, 0);
+
+  color: whitesmoke;    
+}
+
+
+.mobile {
+  display: grid;
+  grid-template-columns: 1fr;  
+  gap: 4px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 9999;
+  background: linear-gradient(230deg, #02EDFC 13.53%, rgba(0, 25, 254, 0.95) 64.06%);
+  padding-bottom: 1rem;
+  border-bottom-right-radius: .5rem;
+  border-bottom-left-radius: .5rem;
+}  
+.button {
+    display: grid;    
+    padding: 10px 20px;
+    background: radial-gradient(circle, rgba(253,187,45,0.306)  0%, rgba(34,193,195,1) 100%);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 1rem;
+    transition: background 0.3s ease;
+    margin-right: .2rem;
+    margin-left: .2rem;
+
+  }
+  
+  .button:hover {
+     animation: glowing-text-shadow-animation .5s ease-in-out,  glow .5s ease-in-out;
+     box-shadow: 0 0 40px teal;
+     text-shadow: 0 0 30px teal;
+
+  }
+  
+  .button:active {
+    transform: translateY(2px);
+     animation: glowing-text-shadow-animation .5s ease-in-out,  glow .5s ease-in-out;
+     box-shadow: 0 0 40px teal;
+     text-shadow: 0 0 30px teal;
+  }
+
+.cross-button {
+  position: absolute;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  font-size: 40px;
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+ }
+
+
+.spinning {
+  animation: spin 1s linear infinite;
+}
+
+.mobile-clip {
+clip-path: circle(0.3% at 100% 0);
+animation: burger-appear 1100ms forwards;
+
+}
+
+.mobile-removed {
+  animation: dis-appear .8s ease-in-out;
+  clip-path: circle(70.7% at 50% 50%);
+  }
+
+
+
+      .dates {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        position: relative;
+        padding-bottom: 75%; /* 4:3 aspect ratio */
+      }
+
+footer {
+  color: #fff;
+  display: inline-block;
+
+  padding: 20px 10px;
+  padding-bottom: 25px;
+  background-color: rgba(165, 86, 86, 0.69);
+  margin-top: 4rem;
+  margin-bottom: 10rem;
+  bottom: 0;
+  width: 100%;
+  height: 60px; 
+  margin: 0 auto;
+  text-align: left;
+  border-radius: 25px;
+}
+footer p {
+  margin: 0;
+}
+.social-buttons li {
+  display: inline-block;
+  margin-right: 5px;
+}
+.social-buttons li:last-child {
+  margin-right: 0;
+}
+.social-buttons a {
+  color: #fff;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: inline-block;
+  line-height: 40px;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  transform: scale(1);
+  background-size: 20%;
+}
+.social-buttons a img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.social-buttons a:hover {
+  background-color: #fff;
+  color: #ea4335;
+  transform: scale(1.5) translateY(-0.25rem);
+}
+.social-buttons a:active {
+  transform: scale(1.25);
+}
+.social-buttons .fb {
+  background: url(fbicon.png) no-repeat center center;
+  background-size: 100%;
+}
+.social-buttons .xtw {
+  background: url(xicon.png) no-repeat center center;
+  background-size: 100%;
+}
+.social-buttons .link {
+  background: url(liicon.png) no-repeat center center;
+  background-size: 100%;
+}      
+
+ 
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes appear {
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+@keyframes burger-appear {
+  100% {
+    clip-path: circle(70.7% at 50% 50%);
+  }
+}
+
+@keyframes dis-appear {
+  100% {
+    clip-path: circle(0.5% at 0 0);
+
+  }
+}
+
+
+
+
+@media screen and (max-width: 1183px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    overflow: hidden;
+    width: 100vw;
+    z-index: 10;
+  }
+
+  body {
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  }
+  
+  .nav-item, .dropdown {
+    display: none;
+    margin: 1rem 0;
+    padding: 1rem;
+  }
+
+  .menu {
+    display: inline-block;
+    margin-left: 35rem;
+
+      }
+  
+  .dropdown-content {
+    position: static;
+    width: 100%;
+    clip-path: none;
+    display: none;
+    margin-top: 1rem;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+    animation: none;
+    background-color: transparent;
+  }
+
+
+  .emblem {
+    transform: translateX(.20rem) translateY(-9.75rem);
+    margin: 0 auto;
+    height: 136px;
+    width: 136px;
+    font-size: 20px;
+    z-index: 11;
+  } 
+  #emblemDonate {
+    transform: translateX(.1rem) translateY(-2.2rem);
+    margin: 0 auto;
+    height: 136px;
+    width: 136px;
+    font-size: 20px;
+    z-index: 11;
+  } 
+
+  #emblemContact {
+    transform: translateX(0.2rem) translateY(-4rem);
+    margin: 0 auto;
+    height: 136px;
+    width: 136px;
+    font-size: 20px;
+    z-index: 11;
+  } 
+  
+  
+}
+ 
+  
+
+@media screen and (max-width: 710px) {
+  .menu {
+    display: inline-block;
+    margin-left: 18rem;
+
+      }
+      
+
+    }
