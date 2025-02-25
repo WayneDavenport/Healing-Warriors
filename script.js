@@ -58,18 +58,18 @@ function animateBackground(background, newText, newHeading, newImage) {
   newImage.classList.add("active");
 }
 
-   window.onload = function() {
-     var urlParams = new URLSearchParams(window.location.search);
-     var buttonNumber = urlParams.get('button');
+window.onload = function () {
+  var urlParams = new URLSearchParams(window.location.search);
+  var buttonNumber = urlParams.get('button');
 
-     if (buttonNumber === '1') {
-       document.getElementById('myButton').click();
-     } else if (buttonNumber === '2') {
-       document.getElementById('myButtonTwo').click();
-     } else if (buttonNumber === '3') {
-       document.getElementById('myButtonThree').click();
-     }
-   };
+  if (buttonNumber === '1') {
+    document.getElementById('myButton').click();
+  } else if (buttonNumber === '2') {
+    document.getElementById('myButtonTwo').click();
+  } else if (buttonNumber === '3') {
+    document.getElementById('myButtonThree').click();
+  }
+};
 
 
 
@@ -100,24 +100,24 @@ menuButton.addEventListener('click', () => {
   // Insert the new div element at the beginning of the body
   document.body.insertBefore(mobileDiv, document.body.firstChild);
 
-// Select the cross-button element
-const crossButton = mobileDiv.querySelector('.cross-button');
+  // Select the cross-button element
+  const crossButton = mobileDiv.querySelector('.cross-button');
 
-// Add a click event listener to the cross-button element
-crossButton.addEventListener('click', () => {
-  // Remove the mobile div from the DOM
-  event.stopPropagation(); // prevent event from bubbling up to parent
-  mobileDiv.classList.add('mobile-removed');
-  setTimeout(function() { 
-    document.body.removeChild(mobileDiv);
-  }, 740);
+  // Add a click event listener to the cross-button element
+  crossButton.addEventListener('click', () => {
+    // Remove the mobile div from the DOM
+    event.stopPropagation(); // prevent event from bubbling up to parent
+    mobileDiv.classList.add('mobile-removed');
+    setTimeout(function () {
+      document.body.removeChild(mobileDiv);
+    }, 740);
 
-  // Add the spinning animation to the cross-button element
-  crossButton.classList.add('spinning');
-  setTimeout(() => {
-    crossButton.classList.remove('spinning');
-  }, 1000); // remove spinning class after 1 second
-});
+    // Add the spinning animation to the cross-button element
+    crossButton.classList.add('spinning');
+    setTimeout(() => {
+      crossButton.classList.remove('spinning');
+    }, 1000); // remove spinning class after 1 second
+  });
 });
 
 const menuToggle = document.getElementsByClassName('menu');
@@ -125,7 +125,44 @@ const menu = document.getElementsByClassName('mobile'); // Your menu element
 
 menuToggle.addEventListener('click', () => {
   const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
-  
+
   menuToggle.setAttribute('aria-expanded', !expanded);
   menu.style.display = expanded ? 'none' : 'block';
 });
+
+// Programs page content switching
+if (document.querySelector('.content-section')) {  // Only run on pages with content sections
+  function switchContent(buttonNumber) {
+    // Hide all content sections
+    document.querySelectorAll('.content-section').forEach(section => {
+      section.style.display = 'none';
+    });
+
+    // Show selected content section
+    document.getElementById(`content${buttonNumber}`).style.display = 'block';
+
+    // Update URL with fragment instead of query parameter
+    history.replaceState(null, null, `#section-${buttonNumber}`);
+  }
+
+  function handleInitialLoad() {
+    // Check if there's a fragment in the URL
+    const fragment = window.location.hash;
+    if (fragment) {
+      // Extract the number from #section-X
+      const buttonNumber = fragment.split('-')[1];
+      if (buttonNumber) {
+        switchContent(buttonNumber);
+      }
+    } else {
+      // Default to first section if no fragment
+      switchContent(1);
+    }
+  }
+
+  // Call on page load
+  window.addEventListener('load', handleInitialLoad);
+
+  // Handle fragment changes
+  window.addEventListener('hashchange', handleInitialLoad);
+}
